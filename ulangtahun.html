@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Ulang Tahun Emanuel 🌙</title>
+  <style>
+    body{margin:0;min-height:100vh;display:flex;justify-content:center;align-items:center;background:radial-gradient(circle at top,#2c3e50,#000814);font-family:Arial,Helvetica,sans-serif;color:#fff;overflow-y:auto;padding:20px}
+    .moon{position:fixed;top:40px;right:40px;width:110px;height:110px;background:#f5f3ce;border-radius:50%;box-shadow:0 0 40px #f5f3ce}
+    .stars{position:fixed;width:2px;height:2px;background:#fff;animation:twinkle 3s infinite alternate}
+    @keyframes twinkle{from{opacity:.3}to{opacity:1}}
+    .card{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);padding:30px;border-radius:25px;max-width:520px;box-shadow:0 10px 30px rgba(0,0,0,.5);animation:fadeIn 1.6s ease}
+    h1{font-size:30px;margin:0 0 6px;color:#eaeaff;text-align:center}
+    h2{font-weight:normal;margin:0 0 14px;color:#cdd6f4;text-align:center}
+    p{font-size:15px;line-height:1.8;color:#e0e0ff}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;justify-content:center;align-items:center;z-index:9;cursor:pointer}
+    .overlay .box{text-align:center}
+    .hint{opacity:.85;font-size:14px}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="overlay" onclick="start()">
+    <div class="box">
+      <h1>🌙</h1>
+      <div class="hint">Sentuh layar untuk membuka</div>
+    </div>
+  </div>
+
+  <div class="moon"></div>
+
+  <div class="card">
+    <h1>Selamat Ulang Tahun</h1>
+    <h2>Emanuel — 21 Tahun</h2>
+    <p>
+      Selamat ulang tahun. Maaf aku belum bisa ngasih hadiah apa-apa. Aku harap di umur kamu yang sekarang, kamu selalu dilancarkan dan dipermudah dalam segala urusan. Sehat selalu, panjang umur, dan semoga kebahagiaan selalu menyertai kamu.<br><br>
+      Senang bisa mengenal kamu. Bahagia selalu ya, entah nantinya sama aku atau dengan orang lain. Aku akan selalu menyimpan rasa ini dengan tulus.<br><br>
+      Aku selalu mencintai kamu. Capailah semua mimpi yang pernah kamu ceritakan ke aku, dan semoga semuanya bisa terwujud satu per satu. Kalau suatu hari aku pergi, tolong janjikan ke aku untuk tetap bahagia, bahkan jika tanpa aku.<br><br>
+      Ingat satu hal: aku akan selalu menjadi orang pertama yang bangga saat melihat kamu berhasil meraih mimpi-mimpimu.<br><br>
+      <em>I always love you. Achieve all the dreams you've ever talked about to me, and I hope you can make them come true. If one day I go, please promise me to always be happy, and be even happier without me if that is what life brings. Remember that I will always be the first person to be proud of you when you achieve your dreams.</em>
+    </p>
+  </div>
+
+  <!-- LAGU PILIHAN: Instrumental tenang, bebas hak cipta -->
+  <!-- Nama file HARUS: moonlight.mp3 dan berada satu folder dengan index.html -->
+  <audio id="music" loop playsinline>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2e5c7d9f1a.mp3?filename=calm-moonlight-ambient-110397.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    for(let i=0;i<70;i++){const s=document.createElement('div');s.className='stars';s.style.top=Math.random()*100+'vh';s.style.left=Math.random()*100+'vw';s.style.animationDuration=2+Math.random()*3+'s';document.body.appendChild(s)}
+    function start(){document.querySelector('.overlay').style.display='none';const a=document.getElementById('music');a.volume=0.6;a.currentTime=0;a.play().catch(()=>{});}
+  </script>
+</body>
+</html>
